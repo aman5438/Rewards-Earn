@@ -1,0 +1,1340 @@
+/* font.css */
+@font-face {
+  font-family: "Minion Pro";
+  src: font-url("MinionPro-Regular.woff2") format("woff2"), font-url("MinionPro-Regular.woff") format("woff"), font-url("MinionPro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Minion Pro";
+  src: font-url("MinionPro-Medium.woff2") format("woff2"), font-url("MinionPro-Medium.woff") format("woff"), font-url("MinionPro-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Engravers MT";
+  src: font-url("EngraversMT.woff2") format("woff2"), font-url("EngraversMT.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "coasterGhost Personal Use Only";
+  src: font-url("coasterGhost-Personal-Use-Only.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Digital Numbers";
+  src: font-url("DigitalNumbers-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* font.css */
+/* reset.css */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove built-in form typography styles */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* reset.css */
+:root {
+  --gold-one: #D2A42C;
+  --gold-two: #AEAE7B;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Minion Pro";
+  position: relative;
+}
+
+.spaceman-Challenge {
+  background: #1A272F asset-url("space-bg.png") no-repeat;
+  background-size: 100%;
+  background-position-x: 60%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 97px 15px;
+  position: relative;
+  flex-direction: column;
+}
+.spaceman-Challenge .btn-primary {
+  background: asset-url("btn-bg.svg") no-repeat center;
+  background-size: contain;
+  border: none;
+  color: #ffffff;
+  font-family: "Minion Pro";
+  text-shadow: none;
+}
+.spaceman-Challenge .btn-primary:hover {
+  background: asset-url("btn-bg-border.svg") no-repeat center;
+  background-size: contain;
+  color: #12C6FF;
+}
+.spaceman-Challenge .btn-border {
+  background: asset-url("btn-bg-border.svg") no-repeat center;
+  background-size: contain;
+  color: #12C6FF;
+  padding: 10px;
+  border: none;
+  font-size: 24px;
+  width: 160px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  line-height: 30px;
+}
+.spaceman-Challenge .btn-border:hover {
+  background: asset-url("btn-bg.svg") no-repeat center;
+  background-size: contain;
+  color: #ffffff;
+}
+.spaceman-Challenge .spaceman-details {
+  text-align: center;
+  font-family: "coasterGhost Personal Use Only";
+  color: #ffffff;
+}
+.spaceman-Challenge .spaceman-details h4 {
+  font-size: 60px;
+  margin: 0 0 29px;
+  line-height: 60px;
+  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
+}
+.spaceman-Challenge .spaceman-details h3 {
+  font-size: 80px;
+  margin: 0 0 44px;
+  line-height: 80px;
+}
+.spaceman-Challenge .spaceman-details h1 {
+  font-size: 120px;
+  margin: 0 0 24px;
+  line-height: 120px;
+  letter-spacing: 20px;
+  text-transform: uppercase;
+}
+.spaceman-Challenge .spaceman-details h2 {
+  font-size: 90px;
+  margin: 0 0 47px;
+  line-height: 90px;
+}
+.spaceman-Challenge .spaceman-details p {
+  font-family: "Minion Pro";
+  font-size: 28px;
+  line-height: 34px;
+}
+.spaceman-Challenge .spaceman-details #countdown {
+  text-align: center;
+}
+.spaceman-Challenge .spaceman-details #countdown .stream-input {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: none;
+  border-radius: 8px;
+  font-family: "Digital Numbers";
+  color: #FF0000;
+  font-size: 40px;
+  line-height: 40px;
+  display: block;
+  position: relative;
+  padding: 12px 11px;
+  max-width: 450px;
+  width: 100%;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  margin: 0 auto 1rem;
+}
+.spaceman-Challenge .spaceman-details #countdown .stream-input::-moz-placeholder {
+  color: #FF0000;
+}
+.spaceman-Challenge .spaceman-details #countdown .stream-input::placeholder {
+  color: #FF0000;
+}
+.spaceman-Challenge .spaceman-details .pre-register-btn {
+  width: 332px;
+  height: 100px;
+  font-size: 36px;
+  line-height: 43px;
+  margin: 49px 0 0;
+  box-shadow: none;
+}
+.spaceman-Challenge .spaceman-details .signin-link {
+  margin: 48px 0 0 0;
+}
+.spaceman-Challenge .spaceman-details .signin-link p {
+  font-size: 36px;
+  line-height: 44px;
+}
+.spaceman-Challenge .spaceman-details .signin-link p button {
+  color: #ffffff;
+  background: transparent;
+  font-size: 36px;
+  border: none;
+  text-decoration: underline;
+  box-shadow: none;
+}
+.spaceman-Challenge .spaceman-accordion {
+  margin: 55px 0;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item {
+  border: none;
+  border-radius: 16px;
+  background: #77514D;
+  background: -moz-linear-gradient(180deg, #77514D 0%, #2C3E48 100%);
+  background: -webkit-linear-gradient(180deg, #77514D 0%, #2C3E48 100%);
+  background: linear-gradient(180deg, #77514D 0%, #2C3E48 100%);
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-button {
+  background: transparent;
+  box-shadow: none;
+  justify-content: center;
+  font-size: 48px;
+  color: #ffffff;
+  font-family: "coasterGhost Personal Use Only";
+  padding: 20px;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-button:after {
+  margin-left: 0;
+  position: absolute;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-image: asset-url("chevron-up.svg");
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background-size: auto;
+  background-position: 50% 45%;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body, 
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body a {
+  font-family: "Inter";
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body h5 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 30px 0 10px;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .point-data {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .point-data .point-card {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.my-point-data {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+}
+.my-point-card {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 10px 0;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .point-data .point-card:last-child {
+  border-bottom: none;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .point-data .point-card .total-point {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px;
+  flex-basis: 90px;
+  margin-right: 8px;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .point-data .point-card .total-point p {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .point-data .point-card .point-summ {
+  flex-basis: 80%;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .table-responsive {
+  max-height: 470px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .table-responsive table {
+  width: 100%;
+  font-family: Inter;
+  font-size: 14px;
+  line-height: 17px;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .table-responsive table th {
+  width: 35%;
+  text-transform: uppercase;
+  font-weight: 600;
+  background: transparent;
+  padding: 5px;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .table-responsive table th:first-child {
+  width: 15%;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .table-responsive table th:last-child {
+  width: 10%;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .table-responsive table td {
+  font-weight: 400;
+  padding: 5px;
+  word-break: break-all;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .table-responsive table td .country-flag {
+  width: 24px;
+}
+.spaceman-Challenge .spaceman-accordion .accordion-item .accordion-body .table-responsive table tr:not(:last-child) td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.spaceman-Challenge .share-with-friends {
+  background-image: linear-gradient(93.37deg, #315C74 1.25%, #483E2C 100%);
+  border-radius: 16px;
+  padding: 40px;
+}
+.spaceman-Challenge .share-with-friends h3 {
+  font-size: 48px;
+  color: #ffffff;
+  font-family: "coasterGhost Personal Use Only";
+}
+.spaceman-Challenge .share-with-friends p {
+  font-size: 16px;
+  color: #ffffff;
+  font-family: "Inter";
+  margin: 12px 0 22px;
+}
+.spaceman-Challenge .share-with-friends .form-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+.spaceman-Challenge .share-with-friends .form-group .email-card {
+  border-radius: 8px;
+  border: none;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 12px;
+  width: calc(100% - 150px);
+  background: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+}
+.spaceman-Challenge .share-with-friends .form-group input, #emails-to-share {
+  border-radius: 8px;
+  border: none;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 5px;
+  width: 100%;
+  overflow-y: auto;
+}
+.spaceman-Challenge .share-with-friends .form-group input:focus, #emails-to-share:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.spaceman-Challenge .share-with-friends .form-group .btn-primary {
+  width: 130px;
+  margin-left: 15px;
+  background-size: 100% 100%;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  height: 40px;
+}
+
+.spaceman-Challenge .modal {
+  text-align: center;
+}
+.spaceman-Challenge .modal .modal-body {
+  padding: 30px;
+}
+.spaceman-Challenge .modal .modal-body h3 {
+  font-family: "coasterGhost Personal Use Only";
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 65px;
+  color: #ffffff;
+}
+.spaceman-Challenge .modal .modal-body .form-floating > label {
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.spaceman-Challenge .modal .modal-body .form-control, .spaceman-Challenge .modal .modal-body .form-select {
+  font-size: 16px;
+  min-height: 56px;
+  height: 56px;
+  padding: 9px 12px 8px;
+  border-radius: 8px;
+  border: none;
+  font-family: "Inter";
+}
+.spaceman-Challenge .modal .btn-close {
+  display: flex;
+  margin: 10px 10px 0 auto;
+  background-image: asset-url("close.svg");
+  opacity: 1;
+  height: 16px;
+  background-size: contain;
+  box-shadow: none;
+}
+.spaceman-Challenge .modal .already-join {
+  padding: 24px 0 47px;
+  font-family: "Minion Pro";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 29px;
+}
+.spaceman-Challenge .modal .already-join button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  outline: none;
+  color: #ffffff;
+  text-decoration: underline;
+}
+.spaceman-Challenge .modal .btn-primary {
+  font-size: 24px;
+  line-height: 28px;
+  padding: 16px;
+  width: 200px;
+  margin: 0 auto;
+}
+.spaceman-Challenge #signIn p {
+  text-align: right;
+  font-size: 24px;
+}
+
+.meme-share {
+  background: #243b47;
+  padding: 100px 0 50px;
+}
+.meme-share .meme-share-img {
+  width: 100%;
+}
+.meme-share h3 {
+  font-size: 48px;
+  color: #ffffff;
+  font-family: "coasterGhost Personal Use Only";
+  text-align: center;
+  margin: 0 0 65px;
+}
+
+body .modal-backdrop.fade {
+  background: asset-url("Overlay.png") no-repeat;
+  background-size: cover;
+  opacity: 1;
+}
+body .modal-content {
+  background: asset-url("popup-BG.png") no-repeat;
+  background-size: cover;
+  max-width: 770px;
+  width: 100%;
+  border: none;
+}
+body .modal.fade .modal-dialog,
+body .modal.show .modal-dialog {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+body ::-webkit-scrollbar {
+  width: 4px;
+}
+body ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+body ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+}
+body ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/*# sourceMappingURL=style.css.map */
+.email-card #selected-emails {
+  display: flex;
+  flex-wrap: wrap;
+}
+.email-card .selected-email {
+    margin-right: 8px;
+    background-color: #ffffff;
+    padding: 7px 8px;
+    border: 1px solid #cccccc;
+    border-radius: 40px;
+    font-size: 18px;
+}
+
+.email-card .selected-email .remove-icon {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* =============== alert msg css start here =============== */
+.flash-alert {
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  top: 45px;
+  background: #FFFFFF;
+  opacity: 0.9;
+  box-shadow: 0px 0px 15px rgba(0, 41, 102, 0.15);
+  border-radius: 100px;
+  box-sizing: border-box;
+  padding: 15px;
+  min-height: 48px;
+  max-width: 570px;
+  width: 90%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  opacity: 1;
+  transform: translateX(-50%);
+}
+
+.flash-alert .alert-icon {
+  margin-right: 10px;
+}
+
+.flash-alert .close-alert {
+  display: flex;
+  margin-left: auto;
+  position: absolute;
+  right: 20px;
+  top: 24px;
+}
+
+.flash-alert p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.background-video {
+  position: relative;
+  min-height: 100vh;
+  iframe {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+}
+.overlay-styling {
+  width: 503px;
+  height: 80px;
+  top: 915px;
+  left: 714px;
+  border-radius: 8px;
+  background: linear-gradient(93.37deg, #315C74 1.25%, #483E2C 100%);
+}
+
+/* Style for the overlay */
+.overlay {
+  position: absolute;
+  bottom: 8%;
+  left: 35%;
+  width: 503px;
+  height: 80px; /* Adjust the height of the overlay as needed */
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 8px;
+  background: linear-gradient(93.37deg, #315C74 1.25%, #483E2C 100%);
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Gallery item */
+.gallery-item {
+  position: relative;
+  width: 30%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 0;
+}
+
+/* Image */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Overlay content */
+.overlay-content {
+  color: white;
+  text-align: center;
+}
+
+/* Show overlay on hover */
+.gallery-item:hover .overlay {
+  opacity: 1; /* Show overlay */
+}
+
+/* Zoom in effect on hover */
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Download icon */
+.download-icon {
+  color: white;
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+/* profile page css */
+.edit_profile_container {
+  width: 770px; 
+  border-radius: 16px; 
+  background: rgb(49,92,116);
+  background: -moz-linear-gradient(90deg, rgba(49,92,116,1) 2%, rgba(72,62,44,1) 80%);
+  background: -webkit-linear-gradient(90deg, rgba(49,92,116,1) 2%, rgba(72,62,44,1) 80%);
+  background: linear-gradient(90deg, rgba(49,92,116,1) 2%, rgba(72,62,44,1) 80%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#315c74",endColorstr="#483e2c",GradientType=1);
+  .form-container {
+    padding: 40px 100px 100px;
+    @media screen and (max-width: 767px) {
+      padding: 25px 15px;
+    }
+  }
+  .profile-head {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 0 40px;
+    h3 {
+      font-family: "coasterGhost Personal Use Only";
+      font-weight: 400; 
+      font-size: 48px; 
+      line-height: 48.43px; 
+      color: #FFFFFF;
+    }
+    .btn-primary {
+      font-family: "Inter";
+      font-weight: 400; 
+      font-size: 16px; 
+      line-height: 24px; 
+      color: #FFFFFF; 
+      border: 1px solid #12C6FF;
+      background-size: cover; 
+      margin: 0;
+      text-shadow: none;
+      &:hover {
+        background: transparent;
+        box-shadow: none;
+        color: #12C6FF;
+      }
+    }
+  }
+  .form-floating {
+    font-family: "Inter";
+    label {
+      font-size: 12px;
+      padding: 1.3rem 0.75rem;
+    }
+    .form-control {
+      border-radius: 8px;
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    width: 100%;       
+  }
+}
+
+/* profile page css */
+
+.spaceman-Challenge.sign-in {
+  padding: 40px 15px;
+}
+
+// sign-in css start 
+
+.spaceman-Challenge {
+  &.sign-in {
+    background: #1A272F asset-url('sign-in-bg.png') no-repeat;
+    background-size: 100%;
+    justify-content: flex-start;
+    .btn-border {
+      background: asset-url('btn-bg-border.svg') no-repeat center;
+      background-size: contain;
+      color: #12C6FF;
+      padding: 10px;
+      border: none;
+      font-size: 24px;
+      width: 160px;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      line-height: 30px;
+      &:hover {
+        background: asset-url('btn-bg.svg') no-repeat center;
+        background-size: contain;
+        color: #ffffff;
+      }
+    }
+    .silver-logo {
+      width: 420px;
+      margin: 0 auto;
+      display: block;
+    }
+    .spaceman-details {
+      h4 {
+        font-size: 30px;
+        margin: 20px 0;
+        line-height: 30px;
+      }
+      h3 {
+        font-size: 40px;
+        margin: 0 0 20px;
+        line-height: 40px;
+      }
+      h1 {
+        font-size: 60px;
+        margin: 0 0 20px;
+        line-height: 60px;
+      }
+    }
+  }
+}
+
+
+// navbar css start 
+
+.spaceman-Challenge {
+  nav {
+  &.navbar {
+      .navbar-nav {
+        align-items: center;
+        .nav-link {
+          color: #12C6FF;
+          line-height: 28px;
+          font-size: 24px;
+          padding: 0;
+          margin: 0 15px;
+          text-decoration: none;
+          &:hover {
+            color: #ffffff;
+          }
+        }
+        .sign-out-btn {
+          background: asset-url('btn-bg-border.svg') no-repeat center;
+          background-size: contain;
+          color: #12C6FF;
+          border: none;
+          font-size: 24px;
+          width: 160px;
+          line-height: 30px;
+          margin: 0 0 0 15px;
+          cursor: pointer;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &:hover {
+            background: asset-url('btn-bg.svg') no-repeat center;
+            background-size: contain;
+            .nav-link {
+              color: #ffffff;
+            } 
+          }
+          .nav-link {
+            margin: 0;
+            padding: 0;
+          }  
+        }
+      }
+    }
+    
+  }
+} 
+
+
+// quest page css start
+
+.quest-main {
+  .spaceman-Challenge {
+    .spaceman-accordion {
+      .accordion-item {
+        margin: 0 0 1rem;
+        .accordion-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px;
+          .q-total-point {
+            font-family: Inter;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 29px;
+            color: #ffffff;
+        }
+        }
+        .accordion-button {
+          justify-content: flex-start;
+          width: auto;
+          padding: 0;
+          &:after {
+            content: none;
+          }
+        }
+        .accordion-body {
+          padding: 0 0 20px;
+          .point-data {
+            margin: 0 20px;
+            padding: 0;
+            border: none;
+            .point-card {
+              align-items: flex-start;
+              &:last-child {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+              }
+              .point-summ {
+                border-bottom: none;
+                font-family: 'Inter';
+                font-size: 14px;
+                .br-top {
+                  border-top: 2px solid rgba(255, 255, 255, 0.1);
+                  padding-top: 0.5rem;
+                  font-family: 'Inter';
+                  margin-top: 0.5rem;
+                  span {
+                    font-size: 20px;
+                    line-height: 24px;
+                    opacity: 1;
+                  }
+                }
+                .invite-btn {
+                  background: transparent;
+                  border: 1px solid #ffffff;
+                  border-radius: 8px;
+                  color: #ffffff;
+                  font-family: 'Inter';
+                  font-size: 14px;
+                  font-weight: 400;
+                  line-height: 17px;
+                  margin-left: 8px;
+                  padding: 8px 7px;
+                  &:hover {
+                    background: #ffffff;
+                    color: #77514D;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .my-social-url {
+        h4 {
+          font-family: 'Inter', sans-sarif;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 19px;
+        }
+        ul {
+          padding: 0 10px 0 2rem;
+          margin: 13px 0 0 0;
+          list-style: decimal;
+          max-height: 195px;
+          overflow-y: auto;
+          li {
+            padding-left: 1rem;
+            a {
+              display: block;
+              border-bottom: 1px solid rgba(217, 217, 217, 0.2);
+              padding-bottom: 8px;
+              margin-bottom: 8px;
+              color: #ffffff;
+              text-decoration: none;
+              word-break: break-all;
+            }
+          }
+        }
+      }
+      .post-url {
+        margin: 20px 0;
+        .form-group {
+          display: flex;
+          align-items: flex-start;
+          input {
+            width: calc(100% - 130px);
+            border-radius: 8px;
+            height: 44px;
+            font-size: 12px;
+            font-family: 'Inter', sans-sarif;
+          }
+          .btn-primary  {
+            background-size: cover;
+            width: 122px;
+            height: 44px;
+            border-radius: 8px;
+            margin: 0 0 0 10px;
+            text-shadow: none;
+            font-family: 'Inter', sans-sarif;
+            border: 1px solid #12C6FF;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            &:hover {
+              background: transparent;
+              color: #12C6FF;
+            }
+          }
+        }
+      }
+      .my-social-url {
+        max-height: 250px;
+        overflow-y: auto;
+        table {
+          tr {
+            th {
+              text-align: left;
+              background: transparent;
+              border-bottom: 1px solid rgba(217, 217, 217, 0.2);
+              padding: 8px 0;
+              font-size: 14px;
+            }
+            td {
+              border-bottom: 1px solid rgba(217, 217, 217, 0.2);
+              font-size: 14px;
+              padding: 8px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.active-user {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ++++++++++++++++++ media css start here ++++++++++++++++++ */
+
+@media (max-width: 991.98px) {
+  .spaceman-Challenge {
+    &.sign-in {
+      padding: 15px;
+    }
+    nav.navbar {
+      margin: 0 0 2rem;
+      .navbar-nav {
+        .nav-link {
+          font-size: 18px;
+          margin: 0 10px;
+        }
+      }
+    }
+    .share-with-friends {
+      padding: 20px;
+      .form-group {
+        .email-card {
+          width: calc(100% - 150px);
+        }
+        .btn-primary {
+          width: 135px;
+          margin-left: 10px;
+        }
+      }
+    }
+    .spaceman-accordion {
+      .accordion-item {
+        .accordion-button {
+          font-size: 34px;
+          &:after {
+            width: 30px;
+            height: 30px;
+            top: 20px;
+          }
+        }
+      }
+    }
+  }
+  
+  .quest-main {
+    .spaceman-Challenge {
+      .spaceman-accordion {
+        .accordion-item {
+          .accordion-header {
+            .q-total-point {
+              font-size: 20px;  
+            }
+          }
+          .accordion-body {
+            .point-data {
+              .point-card {
+                flex-direction: column;
+                .total-point {
+                  width: 120px;
+                  margin: 0 auto 10px;
+                  flex-basis: 70px;
+                }
+              }
+            }
+          }
+        }
+        .post-url {
+          .form-group {
+            input {
+              width: calc(100% - 50px);
+            }
+            .btn-primary {
+              width: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .edit_profile_container {
+    width: 100%;
+    .form-container {
+      padding: 40px 20px;
+    }
+  }
+  
+}
+
+
+@media (max-width: 767.98px) {
+  .spaceman-Challenge {
+    padding: 15px 0;
+    background-position-x: 60%;
+    .silver-logo {
+      width: 100%;
+    }
+    .spaceman-details {
+      h4 {
+        font-size: 24px;
+        line-height: 24px;
+      }
+      h3 {
+        font-size: 30px;
+        line-height: 30px;
+        margin: 0 0 32px;
+      }
+      h1 {
+        font-size: 40px;
+        line-height: 40px;
+        margin: 0 0 24px;
+        letter-spacing: 12px;
+      }
+      h2 {
+        font-size: 36px;
+        line-height: 36px;
+        margin: 0 0 30px;
+      }
+      #countdown {
+        ul {
+          li {
+            margin: 0 9px 10px;
+            font-size: 12px;
+            span {
+              font-size: 27px;
+              line-height: 34px;
+              margin: 0 0 5px;
+              width: auto;
+            }
+          }
+        }
+        .stream-input {
+          font-size: 26px;
+          width: 290px;
+        }
+      }
+      .pre-register-btn {
+        font-size: 27px;
+        line-height: 32px;
+        width: 240px;
+        margin: 20px 0 0;
+      }
+      .signin-link {
+        p {
+          font-size: 26px;
+          line-height: 34px;
+          button {
+            font-size: 26px;
+            line-height: 34px;
+          }
+        }
+      }
+    }
+    .spaceman-accordion {
+      .accordion-item {
+        margin-bottom: 1rem;
+        .accordion-button {
+          justify-content: flex-start;
+          font-size: 34px;
+          &:after {
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+          }
+        }
+      }
+    }
+  }
+  
+  .meme-share {
+    h3 {
+      font-size: 34px;
+      margin: 0 0 40px;
+    }
+  }
+  .spaceman-Challenge {
+    .modal {
+      .modal-body {
+        padding: 15px;
+        h3 {
+          font-size: 44px;
+          line-height: 45px;
+          margin: 0 0 20px;
+        }
+      }
+      .already-join {
+        button {
+          box-shadow: none;
+        }
+      }
+    &.fade {
+      .modal-dialog {
+        width: 90%;
+        margin: 0;
+        transform: translate(-50%, -30%);
+      }
+    }
+    }
+    &.sign-in {
+      padding: 15px 0px;
+      .spaceman-details {
+        h1 {
+          font-size: 40px;
+          line-height: 40px;
+          margin: 0 0 24px;
+          letter-spacing: 12px;
+        }
+        h3 {
+          font-size: 30px;
+          line-height: 30px;
+          margin: 0 0 32px;
+        }
+        h4 {
+          font-size: 24px;
+          line-height: 24px;
+        }
+      }
+      .share-with-friends {
+        padding: 15px;
+        margin: 0 0 2rem;
+        h3 {
+          font-size: 30px;
+          line-height: 30px;
+          margin: 0 0 15px;
+        }
+        .form-group {
+          flex-direction: column;
+          .email-card {
+            width: 100%;
+          }
+          .btn-primary {
+            margin: 15px 0 0;
+          }
+        }
+      }
+    }  
+    nav.navbar {
+      margin-bottom: 2rem;
+      button:not(.disabled):hover {
+        background: #12C6FF;
+      }
+      .navbar-toggler {
+        background: #12C6FF;
+        margin-left: auto;
+        position: relative;
+        z-index: 9; 
+      }
+      .navbar-collapse {
+        background: #77514D;
+        background: -moz-linear-gradient(180deg, #77514D 0%, #2C3E48 100%);
+        background: -webkit-linear-gradient(180deg, #77514D 0%, #2C3E48 100%);
+        background: linear-gradient(180deg, #77514D 0%, #2C3E48 100%);
+        position: absolute;
+        width: 100vw;
+        min-height: 100vh;
+        top: -15px;
+        z-index: 5;
+        right: 0;
+        padding: 5rem 1rem 1rem;
+        .nav-item {
+          width: 100%;
+          text-align: center;
+          margin: 1rem 0;
+          .nav-link {
+            margin: 0;
+          }
+        }
+        .sign-out-btn {
+          margin: 1rem 0 0;
+          .nav-link {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .edit_profile_container {
+      .profile-head {
+        h3 {
+          font-size: 34px;
+          line-height: 34px;  
+        }
+      }
+    }
+  }
+  .meme-share {
+    padding: 3rem 0;
+    .gallery-item {
+      margin: 0 0 10px;
+      width: 100%;
+    }
+  }
+  .quest-main {
+    .spaceman-Challenge {
+      .spaceman-accordion {
+        .post-url {
+          .form-group {
+            flex-direction: column;
+            input {
+              width: 100%;
+            }
+            .btn-primary {
+              margin: 1rem 0 0;
+            }
+          }
+        }
+        .accordion-item {
+          .accordion-body {
+            .point-data {
+              .point-card {
+                .point-summ {
+                  .invite-btn {
+                    margin-left: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,60 @@
+<div class="spaceman-Challenge sign-in">
+  <%= render "nav_bar" %>
+  <div class="container">
+    <%= image_tag("Silver-Text-logo.png", alt: "Supreme Unbeing silver logo", class: "silver-logo") %>
+    <div class="spaceman-accordion">
+      <div class="edit_profile_container mx-auto">
+        <div class="form-container">
+          <div class="edit-form">
+            <%= form_for(@user, url: edit_profile_home_index_path, method: :post) do |f| %>
+              <div class="profile-head">
+                <h3>My Profile</h3>
+                <%= f.submit "Edit Profile", class: "btn btn-primary" %>
+              </div>
+
+
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-floating mb-4">
+                    <%= f.text_field :username, class: "form-control", id:"username", placeholder: "Enter username", readonly: true %>
+                    <%= f.label :username, "Username", for:"username" %>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <%= f.text_field :first_name, class: "form-control", id:"first_name", placeholder: "Enter first name" %>
+                    <%= f.label :first_name, "First Name", for:"first_name" %>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <%= f.text_field :last_name, class: "form-control", id:"last_name", placeholder: "Enter last name" %>
+                    <%= f.label :last_name, "Last Name", for:"last_name" %>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <%= f.text_field :birth_year, class: "form-control", id:"birth_year", placeholder: "Enter birth year" %>
+                    <%= f.label :birth_year, "Birth Year", for:"birth_year" %>
+                  </div>                    
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <%= f.text_field :country_code, class: "form-control", id:"country_code", placeholder: "Enter country code" %>
+                    <%= f.label :country_code, "Country Code", for:"country_code" %>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-floating">
+                    <%= f.email_field :email, class: "form-control", for:"user_email", placeholder: "Enter email", readonly: true %>
+                    <%= f.label :user_email, "Email", for:"user_email" %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

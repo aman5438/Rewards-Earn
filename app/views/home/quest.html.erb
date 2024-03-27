@@ -1,0 +1,101 @@
+<div class="quest-main">
+  <div class="spaceman-Challenge sign-in">
+    <%= render "nav_bar" %>
+    <div class="container">
+      <%= image_tag("Silver-Text-logo.png", alt: "Supreme Unbeing silver logo", class: "silver-logo") %>
+      <div class="spaceman-accordion">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-spacemanOne">
+                <button class="accordion-button" type="button">
+                  My Points
+                </button>
+                <span class="q-total-point">62 500 PTS</span>
+              </h2>
+              <div id="panelsStayOpen-how-to-play" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-spacemanOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <% points(@user_actions).each do |point| %>
+                    <div class="point-data my-point-data">
+                      <div class="point-card my-point-card">
+                          <div class="total-point">
+                            <p><%= point[:points] %></p>
+                            <span>pts</span>
+                          </div>
+                          <div class="point-summ">
+                            <div class="point-details">
+                              <p><%= point[:description] %></p>
+                            </div>
+                            <div class="br-top">
+                              <div class="row flex-column flex-md-row">
+                                <div class="col-md-6">
+                                  <div class="d-flex flex-column flex-md-row align-items-md-start">
+                                    <span class="d-flex me-1"><%= point[:invitations] %></span>  <%= point[:object_name] %>
+                                    <% if point.keys.include?(:button) %>
+                                     <%= button_to point[:button], point[:link], method: :get, class: "invite-btn" %>
+                                    <% end %>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 d-flex justify-content-md-end"><%= point[:points_gained] %> Points gained</div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="accordion-item" style="background-image: linear-gradient(180deg, #315C74 0%, #483E2C 100%)">
+              <h2 class="accordion-header" id="panelsStayOpen-spacemanOne">
+                <button class="accordion-button" type="button">
+                  Verify Social Media Post
+                </button>
+              </h2>
+              <div id="panelsStayOpen-how-to-play" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-spacemanOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="point-data my-point-data">
+                    <p>
+                      Post the video and memes on social media, copy the post URL and paste below to submit for verification.
+                    </p>
+                    <div class="post-url">
+                      <%= form_tag(add_post_link_path, remote: true, method: 'post') do %>
+                        <div class="form-group">
+                          <input name="post_url" type="text" placeholder="Enter post URL" required>
+                          <button class="btn-primary btn-lg" type="submit">Share</button>
+                        </div>
+                      <% end %>
+                    </div>
+                    <% if @social_media_actions.present? %>
+                      <div class="my-social-url">
+                        <h3>My URLs</h3>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Post Link</th>
+                              <th>Status</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <% @social_media_actions.each do |social_media_action| %>
+                              <tr>
+                                <td><%= social_media_action.meta %></td>
+                                <td><%= social_media_action.status %></td>
+                              </tr>
+                            <% end %>
+                          </tbody>
+                        </table>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

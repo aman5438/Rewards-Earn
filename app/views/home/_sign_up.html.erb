@@ -1,0 +1,69 @@
+<div class="modal fade" id="signUp" tabindex="-1" aria-labelledby="signUpLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), id: 'sign-up-form') do |f| %>
+          <%= f.hidden_field :invite_username, value: params[:user_name] %>
+          <h3>Sign up - it's FREE</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <%= f.text_field :first_name, autofocus: true, class: "form-control w-100", placeholder: "First Name", required: true%>
+                <%= f.label :first_name %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <%= f.text_field :last_name, class: "form-control w-100", placeholder: "Last Name", required: true %>
+                <%= f.label :last_name %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <%= select_year(0, {:prompt => "Birth Year",
+                  :start_year => DateTime.now.year, 
+                  :end_year => DateTime.now.year - 100}, 
+                 {:class => "form-select", :required => true, :name => "user[birth_year]"}) %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <%= country_select("user", "country_code", { selected: "SE" }, { class: "form-select" }) %>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-floating mb-3">
+                <%= f.email_field :email, id: 'email-1', class: "form-control w-100", placeholder: "Email address", required: true %>
+                <%= f.label :email, "Email address" %>
+              </div>                    
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <%= f.password_field :password, id: 'password-1', class: "form-control w-100", placeholder: "Password", required: true %>
+                <i class="far fa-eye" id="togglePassword" style="cursor: pointer; margin-left: -30px; z-index: 100;"></i>
+                <%= f.label :password %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating mb-3">
+                <%= f.password_field :password_confirmation, class: "form-control w-100", placeholder: "Confirm password", required: true %>
+                <i class="far fa-eye" id="togglePassword" style="cursor: pointer; margin-left: -30px; z-index: 100;"></i>
+                <%= f.label :password_confirmation %>
+              </div>
+            </div>
+          </div>
+          <% if Rails.env == "development" %>
+            <%= f.submit "Sign Up", class: "btn btn-primary" %>
+          <% else %>
+            <!-- <%#= recaptcha_tags class: "sign_captcha" %> -->
+            <%= f.submit "Sign Up", class: "btn btn-primary" %>
+          <% end %>
+        <% end %>  
+      </div>
+      <div class="already-join">
+        Already joined? <button data-bs-toggle="modal" data-bs-target="#signIn">Sign in here!</button>
+      </div>
+    </div>
+  </div>
+</div>

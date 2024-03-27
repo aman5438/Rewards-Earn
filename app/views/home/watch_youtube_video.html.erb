@@ -1,0 +1,47 @@
+<div class="background-video">
+  <!-- YouTube video iframe -->
+  <iframe height="100%" src="https://www.youtube.com/embed/Z5ZwZJ_iDOI?autoplay=1&mute=1" title="Supreme Unbeing  - Spaceman (Lyric Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!-- Overlay div -->
+  <div class="overlay">
+    <!-- Content to display on top of the video -->
+      You will earn <strong>&nbsp;1 000&nbsp;</strong> points in&nbsp;<strong id="counter"><%= Rails.application.secrets.youtube_stream_length %></strong>&nbsp;seconds
+  </div>
+</div>
+
+<script>
+  function reverseCounter(startingNumber) {
+    let count = startingNumber;
+
+    // Display the initial count
+    console.log(count);
+
+    // Define a countdown interval
+    const intervalId = setInterval(() => {
+      // Decrease count by 1
+      count--;
+
+      // Check if count has reached zero
+      if (count === 0) {
+        // Stop the countdown
+        clearInterval(intervalId);
+        // Perform AJAX request to Rails action
+        $.ajax({
+          url: '/update_youtube_stream_count',
+          headers: {'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+          method: 'POST',
+          success: function(response) {
+            // Handle success response if needed
+            $(".overlay").text("You have earned 1 000 points");
+          }
+        });
+        // Display a message when countdown is complete
+      } else {
+        // Display the current count
+        $("#counter").text(count);
+      }
+    }, 1000); // Interval of 1 second (1000 milliseconds)
+  }
+
+  // Start the reverse counter with a starting number of 10
+  reverseCounter("<%= Rails.application.secrets.youtube_stream_length %>");
+</script>

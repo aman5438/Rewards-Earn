@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- bootstrap css  -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <title>Supreme Unbeing</title>
+</head>
+<body>
+  <div class="spaceman-Challenge">
+    <div class="container">
+      <div class="spaceman-details">
+        <img src="images/Silver-Text-logo.png" alt="Supreme Unbeing silver logo" class="silver-logo">
+        <h4>Presents</h4>
+        <h3>The journey of a lifetime</h3>
+        <h1>Spaceman Challenge</h1>
+        <h2>Begins March 1st, 2024</h2>
+  
+        <div id="countdown">
+          <ul>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1800"><span id="seconds"></span>Seconds</li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1600"><span id="minutes"></span>Minutes</li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1400"><span id="hours"></span>Hours</li>
+            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1200"><span id="days"></span>days</li>
+          </ul>
+        </div>
+  
+        <button type="submit" class="pre-register-btn" id="pre-register-btn">Pre-register</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ************ count down js 
+
+    // Set the date we're counting down to
+    (function () {
+      const second = 1000,
+            minute = second * 60,
+            hour = minute * 60,
+            day = hour * 24;
+
+      //I'm adding this section so I don't have to keep updating this pen every year :-)
+      //remove this if you don't need it
+      let today = new Date(),
+          dd = String(today.getDate()).padStart(2, "0"),
+          mm = String(today.getMonth() + 1).padStart(2, "0"),
+          yyyy = today.getFullYear(),
+          nextYear = yyyy + 1,
+          dayMonth = "03/01/",
+          wedding = dayMonth + yyyy;
+      
+      today = mm + "/" + dd + "/" + yyyy;
+      if (today > wedding) {
+        wedding = dayMonth + nextYear;
+      }
+      //end
+      
+      const countDown = new Date(wedding).getTime(),
+        x = setInterval(function() {    
+          const now = new Date().getTime(),
+            distance = countDown - now;
+
+          document.getElementById("days").innerText = Math.floor(distance / (day)),
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+          //do something later when date is reached
+          if (distance < 0) {
+            document.getElementById("headline").innerText = "Now it's Begins";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            clearInterval(x);
+          }
+          //seconds
+        }, 0)
+      }());
+
+      document.getElementById('pre-register-btn').addEventListener('click', function() {
+        // Change the URL to the link you want to open
+        var url = 'https://distrokid.com/hyperfollow/supremeunbeing/spaceman';
+        
+        // Open the link in a new tab
+        window.open(url, '_blank');
+      });
+  </script>
+</body>
+</html>
+

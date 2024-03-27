@@ -1,0 +1,25 @@
+<% flash.each do |key, msg| %>
+  <% next unless key.present? && valid_flash_msg(key) %>
+  <div class="flash-alert flash-<%= alert_bar_type(key) %>">
+    <div class="alert-message">
+      <%= image_tag "icon_alert_#{alert_bar_type(key)}.svg", alt: "img", class: "alert-icon" %> <%= msg %>
+      <%= link_to "javascript:void(0)", class: "close-alert px-2" do %>
+        <%= image_tag 'icon_close_gray.svg', width: "14px", alt: 'X' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    $(".flash-alert").show();
+    setTimeout(function() {
+      $('.flash-alert').hide();
+    }, 5000);
+  });
+
+  $(".close-alert").click(function(){
+    $(".flash-alert").hide(1000);
+  });
+</script>

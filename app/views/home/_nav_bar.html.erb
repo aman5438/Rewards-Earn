@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-md ms-auto">
+  <div class="container">
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a hreaf="javascript:void();" class="nav-link">Username: <%= current_user.username %></a>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Home", dashboard_home_index_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Quest", quest_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Profile", profile_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Watch YouTube video", watch_youtube_video_path, target: "_blank", class: "nav-link" %>
+        </li>
+        <li class="nav-item sign-out-btn">
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

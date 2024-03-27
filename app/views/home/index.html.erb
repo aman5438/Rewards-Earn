@@ -1,0 +1,49 @@
+<div class="spaceman-Challenge">
+  <% if user_signed_in? %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn-primary btn-border text-center text-decoration-none" %>
+  <% end %>
+  <div class="container">
+    <div class="spaceman-details">
+      <%= image_tag "Silver-Text-logo.png", alt: "Supreme Unbeing silver logo", class: "silver-logo" %>
+      <h4>Presents</h4>
+      <h3>The journey of a lifetime</h3>
+      <h1>Spaceman Challenge</h1>
+      
+      <div id="countdown">
+        <input type="text" class="stream-input" placeholder="<%= format_european_billion(@total_streams) %>" disabled>
+      </div>
+      <p>Streams</p>
+      <% unless user_signed_in? %>
+        <button data-bs-toggle="modal" data-bs-target="#signUp" class="btn-primary pre-register-btn">Sign up - it's FREE</button>
+
+        <div class="signin-link">
+          <p>Already joined? <button data-bs-toggle="modal" data-bs-target="#signIn">Sign in here!</button></p>
+          <!-- Sign Up Modal -->
+        </div>
+        <%= render "sign_up" %>
+        <!-- Sign In Modal -->
+        <%= render "sign_in" %>
+        <%= render "terms" %>
+      <% end %>
+    </div>
+    <div class="spaceman-accordion">
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="row">
+          <%= render "how_to_play" %>
+          <%= render "leaderboard" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<%= render "meme_list" %>
+<script>
+  $(document).ready(function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('user_name')) {
+      var userName = urlParams.get('user_name');
+      $('#signUp').modal('show');
+    }
+  });
+</script>

@@ -1,0 +1,298 @@
+/* font.css */
+@font-face {
+  font-family: "Minion Pro";
+  src: url("../fonts/MinionPro-Regular.woff2") format("woff2"), url("../fonts/MinionPro-Regular.woff") format("woff"), url("../fonts/MinionPro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Minion Pro";
+  src: url("../fonts/MinionPro-Medium.woff2") format("woff2"), url("../fonts/MinionPro-Medium.woff") format("woff"), url("../fonts/MinionPro-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Engravers MT";
+  src: url("../fonts/EngraversMT.woff2") format("woff2"), url("../fonts/EngraversMT.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "coasterGhost Personal Use Only";
+  src: url("../fonts/coasterGhost-Personal-Use-Only.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Digital Numbers";
+  src: url("../fonts/DigitalNumbers-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* font.css */
+/* reset.css */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove built-in form typography styles */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* reset.css */
+:root {
+  --gold-one: #D2A42C;
+  --gold-two: #AEAE7B;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Minion Pro";
+  position: relative;
+}
+
+.spaceman-Challenge {
+  background: url("../images/space-bg.png") no-repeat;
+  background-size: cover;
+  background-position-x: 60%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 97px 15px;
+}
+.spaceman-Challenge .spaceman-details {
+  text-align: center;
+  font-family: "coasterGhost Personal Use Only";
+  color: #ffffff;
+}
+.spaceman-Challenge .spaceman-details h4 {
+  font-size: 60px;
+  margin: 0 0 29px;
+  line-height: 60px;
+  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
+}
+.spaceman-Challenge .spaceman-details h3 {
+  font-size: 80px;
+  margin: 0 0 44px;
+  line-height: 80px;
+}
+.spaceman-Challenge .spaceman-details h1 {
+  font-size: 120px;
+  margin: 0 0 24px;
+  line-height: 120px;
+  letter-spacing: 20px;
+  text-transform: uppercase;
+}
+.spaceman-Challenge .spaceman-details h2 {
+  font-size: 90px;
+  margin: 0 0 47px;
+  line-height: 90px;
+}
+.spaceman-Challenge .spaceman-details #countdown ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spaceman-Challenge .spaceman-details #countdown ul li {
+  margin: 0 14px 15px;
+  color: #ffffff;
+  font-family: "Minion Pro";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  display: block;
+}
+.spaceman-Challenge .spaceman-details #countdown ul li span {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  font-family: "Digital Numbers";
+  color: #FF0000;
+  font-size: 40px;
+  line-height: 40px;
+  display: block;
+  position: relative;
+  padding: 18px 11px;
+  margin: 0 0 8px;
+  width: 100px;
+}
+.spaceman-Challenge .spaceman-details #countdown ul li span:after {
+  content: ":";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  font-family: "Digital Numbers";
+  font-size: 16px;
+  color: #ffffff;
+  transform: translateY(-50%);
+}
+.spaceman-Challenge .spaceman-details #countdown ul li:last-child span::after {
+  content: none;
+}
+.spaceman-Challenge .spaceman-details .pre-register-btn {
+  background: url("../images/btn-bg.svg") no-repeat center;
+  background-size: contain;
+  border: none;
+  color: #ffffff;
+  width: 332px;
+  height: 100px;
+  font-size: 36px;
+  line-height: 43px;
+  font-family: "Minion Pro";
+  margin: 49px 0 0;
+}
+.spaceman-Challenge .spaceman-details .pre-register-btn:hover {
+  opacity: 0.9;
+}
+
+/* ++++++++++++++++++ media css start here ++++++++++++++++++ */
+@media (max-width: 767.98px) {
+  .spaceman-Challenge {
+    padding: 15px 0;
+    background-position-x: 60%;
+  }
+  .spaceman-Challenge .silver-logo {
+    width: 100%;
+  }
+  .spaceman-Challenge .spaceman-details h4 {
+    font-size: 24px;
+    line-height: 24px;
+    margin: 16px 0 20px;
+  }
+  .spaceman-Challenge .spaceman-details h3 {
+    font-size: 36px;
+    line-height: 36px;
+    margin: 0 0 32px;
+  }
+  .spaceman-Challenge .spaceman-details h1 {
+    font-size: 60px;
+    line-height: 60px;
+    margin: 0 0 32px;
+    letter-spacing: 12px;
+  }
+  .spaceman-Challenge .spaceman-details h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin: 0 0 30px;
+  }
+  .spaceman-Challenge .spaceman-details #countdown ul li {
+    margin: 0 9px 0;
+    font-size: 12px;
+  }
+  .spaceman-Challenge .spaceman-details #countdown ul li span {
+    font-size: 27px;
+    line-height: 34px;
+    margin: 0 0 5px;
+    width: 70px;
+  }
+  .spaceman-Challenge .spaceman-details #countdown ul li span:after {
+    right: -16px;
+  }
+  .spaceman-Challenge .spaceman-details .pre-register-btn {
+    font-size: 27px;
+    line-height: 32px;
+    width: 240px;
+  }
+}
+@media (max-width: 340px) {
+  .spaceman-Challenge {
+    padding: 50px 0;
+  }
+  .spaceman-Challenge .spaceman-details h4 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .spaceman-Challenge .spaceman-details h3 {
+    font-size: 30px;
+    line-height: 30px;
+    margin: 0 0 32px;
+  }
+  .spaceman-Challenge .spaceman-details h1 {
+    font-size: 40px;
+    line-height: 40px;
+    margin: 0 0 24px;
+    letter-spacing: 12px;
+  }
+  .spaceman-Challenge .spaceman-details h2 {
+    font-size: 36px;
+    line-height: 36px;
+    margin: 0 0 30px;
+  }
+  .spaceman-Challenge .spaceman-details #countdown ul li {
+    margin: 0 9px 10px;
+    font-size: 12px;
+  }
+  .spaceman-Challenge .spaceman-details #countdown ul li span {
+    font-size: 27px;
+    line-height: 34px;
+    margin: 0 0 5px;
+    width: auto;
+  }
+  .spaceman-Challenge .spaceman-details .pre-register-btn {
+    font-size: 27px;
+    line-height: 32px;
+    width: 240px;
+    margin: 20px 0 0;
+  }
+}/*# sourceMappingURL=style.css.map */

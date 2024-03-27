@@ -1,0 +1,41 @@
+<div class="col-md-6">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-spacemanTwo">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-leaderboard" aria-expanded="true" aria-controls="panelsStayOpen-leaderboard">
+        Leaderboard
+      </button>
+    </h2>
+    <div id="panelsStayOpen-leaderboard" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-spacemanTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>PLACE</th>
+                <th>NAME</th>
+                <th>Country</th>
+                <th>POINTS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% current_user_id = current_user&.id %>
+              <% @sorted_users_with_ranks&.each do |user| %>
+                <tr <%= "class=active-user" if user.id == current_user_id %> >
+                  <td><%= user.rank %></td>
+                  <td><%= user.username %></td>
+                  <td>  
+                    <div class="country-details">
+                      <%= flag_icon(user.country_code)%>
+                      <%= ISO3166::Country[user.country_code] %>
+                    </div>
+                  </td>
+                  <td><%= user.total_points %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>

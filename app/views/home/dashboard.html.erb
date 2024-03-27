@@ -1,0 +1,100 @@
+<div class="spaceman-Challenge sign-in">
+  <% if user_signed_in? %>
+    <%= render "nav_bar" %>
+  <% end %>
+  <div class="container">
+    <div class="spaceman-details">
+      <%= image_tag("Silver-Text-logo.png", alt: "Supreme Unbeing silver logo", class: "silver-logo") %>
+      <h4>Presents</h4>
+      <h3>The journey of a lifetime</h3>
+      <h1>Spaceman Challenge</h1>
+      
+      <div id="countdown">
+        <input type="text" class="stream-input" placeholder="<%= format_european_billion(@total_streams) %>" disabled>
+      </div>
+      <p>Streams</p>
+    </div>
+    <div class="spaceman-accordion">
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="row">
+          <%= render "how_to_play" %>
+          <%= render "leaderboard" %>
+          <%= render "terms" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="share-with-friends">
+      <h3>Share with friends</h3>
+      <%= form_tag(share_invitations_path, remote: true, method: 'post', id: 'share-invitations') do %>
+        <div class="form-group">
+          <div class="email-card">
+            <div id="selected-emails"></div>
+            <input id="emails-to-share" name="emails" type="text" placeholder="Enter comma separater emails">
+          </div>
+          <button class="btn-primary" type="submit">Share</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+<%= render "meme_list" %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var selectedEmails = [];
+
+    $('#emails-to-share').on('input', function() {
+      var input = $(this).val().trim();        
+      if (input.includes(',')) {
+        var emails = input.split(',').map(function(email) {
+            return email.trim();
+        }).filter(function(email) {
+            return email !== '' && isValidEmail(email);
+        });
+        selectedEmails = selectedEmails.concat(emails);
+        updateSelectedEmailsDisplay();
+        $('#emails-to-share').val('');
+      }
+    });
+
+    $('#selected-emails').on('click', '.remove-icon', function() {
+      var index = $(this).parent().index();
+      selectedEmails.splice(index, 1);
+      updateSelectedEmailsDisplay();
+    });
+
+    $('#share-invitations').on('submit', function(event) {
+      event.preventDefault();
+      var token = $('meta[name="csrf-token"]').attr('content');
+      $.ajax({
+        url: $(this).attr('action'),
+        method: $(this).attr('method'),
+        headers: {'X-CSRF-Token': token },
+        data: { emails: selectedEmails },
+        success: function(response) {
+          console.log(response);
+          selectedEmails = [];
+          updateSelectedEmailsDisplay();
+        },
+        error: function(xhr, status, error) {
+          console.error(error);
+        }
+      });
+    });
+
+    function updateSelectedEmailsDisplay() {
+      $('#selected-emails').empty();
+      selectedEmails.forEach(function(email) {
+        $('<div class="selected-email">' + email + '<span class="remove-icon">&#10006;</span></div>').appendTo('#selected-emails');
+      });
+    }
+
+    function isValidEmail(email) {
+      var emailRegex = /^\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b$/;
+      return emailRegex.test(email);
+    }
+  }); 
+</script>
+    
